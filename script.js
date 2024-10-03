@@ -10,11 +10,12 @@ function clearDisplay(){
     display.value = "";
 }
 
-function calculate(){
-    try{
-        display.value = eval(display.value);
+function calculate() {
+    try {
+        let result = Function("return " + display.value)();
+        display.value = result;
     }
-    catch(error){
+    catch (error) {
         display.value = "Error";
     }
 }
